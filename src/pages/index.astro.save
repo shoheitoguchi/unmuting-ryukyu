@@ -1,0 +1,22 @@
+
+
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Unmuting Ryukyu | Shohei's Journey">
+	<div class="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-slate-900 to-slate-800 px-6">
+		<h1 class="text-5xl md:text-6xl font-bold text-white mb-6 text-center">
+			Unmuting Ryukyu
+		</h1>
+		<p class="text-xl md:text-2xl text-slate-300 mb-12 text-center max-w-2xl">
+			Revealing the hidden stories of Okinawa's struggle, culture, and resilience.
+		</p>
+		<a href="https://www.youtube.com/@letsgokinawa?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg transition-colors text-lg mb-8">
+			🎬 Subscribe to YouTube
+		</a>
+		<a href="/videos/" class="text-slate-300 hover:text-white underline">
+			View Our Documentaries →
+		</a>
+	</div>
+</Layout>

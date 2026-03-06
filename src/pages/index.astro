@@ -1,11 +1,130 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Unmuting Ryukyu — Revealing Okinawa's Hidden Stories">
+
+	<!-- HERO -->
+	<section style="min-height:calc(100vh - 72px);display:flex;align-items:center;position:relative;overflow:hidden;padding:80px 32px;">
+		<!-- 首里城 背景画像（blurのためにmargin負値で端の白滲みを隠す） -->
+		<div style="position:absolute;inset:-15px;z-index:0;background-image:url('/images/shuri-castle.jpg');background-size:cover;background-position:center;filter:blur(8px);"></div>
+		<!-- メインオーバーレイ -->
+		<div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom, rgba(8,14,28,0.88) 0%, rgba(8,14,28,0.70) 50%, rgba(8,14,28,0.88) 100%);"></div>
+		<!-- 右側のウォームグロー（夕焼け演出） -->
+		<div style="position:absolute;inset:0;z-index:2;background:radial-gradient(ellipse at 80% 40%, rgba(200,100,20,0.28) 0%, transparent 60%);pointer-events:none;"></div>
+
+		<!-- Left accent bar -->
+		<div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#8B1D25;z-index:3;"></div>
+
+		<div style="max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:4;">
+			<p style="color:#C8A86A;font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.3em;margin:0 0 32px 0;padding-left:16px;border-left:3px solid #8B1D25;text-shadow:0 1px 4px rgba(0,0,0,0.9);">A Documentary Series by Shohei Toguchi</p>
+			<!-- UNMUTING: ゴールドグラデーション文字 -->
+			<h1 style="font-family:'Shippori Mincho','Noto Serif JP',serif;font-size:clamp(64px,10vw,120px);font-weight:900;line-height:0.95;margin:0 0 4px 0;letter-spacing:0.04em;text-transform:uppercase;background:linear-gradient(to bottom, #F5D98A 0%, #C8860A 60%, #A06308 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 3px 8px rgba(0,0,0,0.8));">
+				UNMUTING
+			</h1>
+			<!-- RYUKYU: 赤・太字 -->
+			<h1 style="font-family:'Shippori Mincho','Noto Serif JP',serif;font-size:clamp(64px,10vw,120px);font-weight:900;color:#C0392B;line-height:0.95;margin:0 0 36px 0;letter-spacing:0.04em;text-transform:uppercase;text-shadow:0 3px 14px rgba(0,0,0,0.9),0 0 40px rgba(150,20,20,0.4);">
+				RYUKYU
+			</h1>
+			<div style="width:56px;height:2px;background:#8B1D25;margin-bottom:32px;"></div>
+			<p style="font-family:'Noto Serif JP',serif;font-size:17px;color:#D8D2CC;line-height:1.9;margin:0 0 48px 0;max-width:500px;text-shadow:0 1px 6px rgba(0,0,0,0.9);">
+				Revealing the hidden stories of Okinawa's struggle, culture, and resilience through documentary filmmaking.
+			</p>
+			<div style="display:flex;gap:16px;flex-wrap:wrap;">
+				<a href="https://www.youtube.com/@letsgokinawa?sub_confirmation=1" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:inline-flex;align-items:center;gap:10px;background:#8B1D25;color:#F0EBE3;font-family:'Noto Sans JP',sans-serif;font-weight:700;padding:16px 32px;border-radius:2px;font-size:14px;letter-spacing:0.05em;">
+					<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+					Subscribe on YouTube
+				</a>
+				<a href="/videos/" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(240,235,227,0.25);color:#F0EBE3;font-family:'Noto Sans JP',sans-serif;font-weight:500;padding:16px 32px;border-radius:2px;font-size:14px;letter-spacing:0.05em;">
+					Watch Documentaries →
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- FEATURED VIDEO -->
+	<section style="padding:96px 32px;background:#F0EBE3;border-bottom:1px solid #D0C5BA;">
+		<div style="max-width:1000px;margin:0 auto;">
+			<div style="display:flex;align-items:baseline;gap:16px;margin-bottom:48px;">
+				<div style="width:4px;height:28px;background:#8B1D25;flex-shrink:0;"></div>
+				<div>
+					<p style="color:#8B1D25;font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.25em;margin:0 0 8px 0;">Featured Documentary</p>
+					<h2 style="font-family:'Shippori Mincho','Noto Serif JP',serif;font-size:clamp(26px,4vw,38px);font-weight:700;color:#1C2C4F;margin:0;line-height:1.2;">Latest Work</h2>
+				</div>
+			</div>
+			<div style="background:#fff;border:1px solid #D0C5BA;overflow:hidden;box-shadow:4px 4px 0px #1C2C4F;">
+				<div style="position:relative;padding-bottom:56.25%;height:0;background:#0a0a0a;">
+					<iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/2v2vOrz5RXA" title="Battle of Okinawa" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+				</div>
+				<div style="padding:36px;">
+					<span style="display:inline-block;background:#8B1D25;color:#F0EBE3;font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:700;padding:4px 12px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:16px;">Documentary</span>
+					<h3 style="font-family:'Shippori Mincho','Noto Serif JP',serif;font-size:22px;font-weight:700;color:#1C2C4F;margin:0 0 12px 0;line-height:1.4;">Battle of Okinawa: 10 Realities You Never Know</h3>
+					<p style="color:#4A3F3B;font-family:'Noto Serif JP',serif;line-height:1.9;margin:0 0 20px 0;font-size:15px;">A documentary exploring the pivotal Battle of Okinawa and its lasting impact on the island's history, people, and culture.</p>
+					<a href="/blog/battle-of-okinawa/" style="text-decoration:none;color:#8B1D25;font-family:'Noto Sans JP',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.05em;display:inline-flex;align-items:center;gap:6px;text-transform:uppercase;">
+						Read the Full Story →
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- MISSION -->
+	<section style="padding:96px 32px;background:#1C2C4F;position:relative;overflow:hidden;">
+		<div style="position:absolute;right:-80px;top:50%;transform:translateY(-50%);font-family:'Shippori Mincho',serif;font-size:240px;font-weight:700;color:rgba(255,255,255,0.03);line-height:1;user-select:none;pointer-events:none;">琉</div>
+		<div style="max-width:900px;margin:0 auto;position:relative;z-index:1;">
+			<div style="display:flex;align-items:baseline;gap:16px;margin-bottom:48px;">
+				<div style="width:4px;height:28px;background:#8B1D25;flex-shrink:0;"></div>
+				<p style="color:#8B1D25;font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.25em;margin:0;">Our Mission</p>
+			</div>
+			<h2 style="font-family:'Shippori Mincho','Noto Serif JP',serif;font-size:clamp(28px,4vw,44px);font-weight:700;color:#F0EBE3;margin:0 0 32px 0;line-height:1.25;">Why We Tell<br>These Stories.</h2>
+			<p style="color:#A8B8C8;font-family:'Noto Serif JP',serif;font-size:17px;line-height:1.95;margin:0 0 20px 0;max-width:680px;">
+				Okinawa's history has been silenced for too long. Through documentaries and storytelling, we bring to light the struggles, resilience, and beauty of Ryukyuan culture — connecting the global Uchinanchu community with their roots.
+			</p>
+			<p style="color:#D4C9BC;font-family:'Noto Serif JP',serif;font-size:17px;line-height:1.95;margin:0 0 48px 0;max-width:680px;font-style:italic;">
+				"Language is peace. To know a culture's tongue is to respect its soul."
+			</p>
+			<div style="display:flex;gap:16px;flex-wrap:wrap;">
+				<a href="/about/" style="text-decoration:none;border:1px solid rgba(240,235,227,0.3);color:#F0EBE3;font-family:'Noto Sans JP',sans-serif;font-weight:500;padding:14px 28px;border-radius:2px;font-size:13px;letter-spacing:0.05em;">
+					About Shohei →
+				</a>
+				<a href="/services/" style="text-decoration:none;color:#B5934A;font-family:'Noto Sans JP',sans-serif;font-weight:700;padding:14px;font-size:13px;letter-spacing:0.05em;">
+					View Services →
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- SERVICES PREVIEW -->
+	<section style="padding:96px 32px;background:#E8E2D8;border-bottom:1px solid #D0C5BA;">
+		<div style="max-width:1100px;margin:0 auto;">
+			<div style="display:flex;align-items:baseline;gap:16px;margin-bottom:56px;">
+				<div style="width:4px;height:28px;background:#8B1D25;flex-shrink:0;"></div>
+				<div>
+					<p style="color:#8B1D25;font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.25em;margin:0 0 8px 0;">What We Do</p>
+					<h2 style="font-family:'Shippori Mincho','Noto Serif JP',serif;font-size:clamp(26px,4vw,38px);font-weight:700;color:#1C2C4F;margin:0;">Video Production Services</h2>
+				</div>
+			</div>
+			<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2px;background:#D0C5BA;">
+				<div style="background:#F0EBE3;padding:40px;border-top:3px solid #8B1D25;">
+					<p style="color:#8B1D25;font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.2em;margin:0 0 20px 0;">01</p>
+					<h3 style="font-family:'Shippori Mincho','Noto Serif JP',serif;font-size:20px;font-weight:700;color:#1C2C4F;margin:0 0 12px 0;line-height:1.3;">Documentary Films</h3>
+					<p style="color:#4A3F3B;font-family:'Noto Serif JP',serif;font-size:14px;line-height:1.9;margin:0;">Long-form storytelling that captures culture, history, and human experience with cinematic quality.</p>
+				</div>
+				<div style="background:#F0EBE3;padding:40px;border-top:3px solid #1C2C4F;">
+					<p style="color:#8B1D25;font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.2em;margin:0 0 20px 0;">02</p>
+					<h3 style="font-family:'Shippori Mincho','Noto Serif JP',serif;font-size:20px;font-weight:700;color:#1C2C4F;margin:0 0 12px 0;line-height:1.3;">Short-form Content</h3>
+					<p style="color:#4A3F3B;font-family:'Noto Serif JP',serif;font-size:14px;line-height:1.9;margin:0;">High-impact Reels, Shorts, and TikTok content designed for maximum reach and engagement.</p>
+				</div>
+				<div style="background:#F0EBE3;padding:40px;border-top:3px solid #8B1D25;">
+					<p style="color:#8B1D25;font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.2em;margin:0 0 20px 0;">03</p>
+					<h3 style="font-family:'Shippori Mincho','Noto Serif JP',serif;font-size:20px;font-weight:700;color:#1C2C4F;margin:0 0 12px 0;line-height:1.3;">Corporate & Events</h3>
+					<p style="color:#4A3F3B;font-family:'Noto Serif JP',serif;font-size:14px;line-height:1.9;margin:0;">Professional event coverage, PR videos, and brand films for businesses and organizations.</p>
+				</div>
+			</div>
+			<div style="margin-top:40px;">
+				<a href="/services/" style="text-decoration:none;color:#8B1D25;font-family:'Noto Sans JP',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.05em;text-transform:uppercase;">View All Services →</a>
+			</div>
+		</div>
+	</section>
+
 </Layout>
