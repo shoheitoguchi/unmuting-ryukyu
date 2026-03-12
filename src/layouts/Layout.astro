@@ -17,72 +17,75 @@ const { title } = Astro.props;
 		<meta property="og:description" content="Documentary filmmaker revealing Okinawa's untold stories." />
 		<meta property="og:type" content="website" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@400;500;600;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 		<title>{title}</title>
 	</head>
-	<body style="margin:0;padding:0;font-family:'Noto Serif JP',serif;background:#F0EBE3;color:#1C1210;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;">
+	<body style="margin:0;padding:0;font-family:'Inter', sans-serif;background:#1e1e1e;color:#f5f0e8;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;">
 
 		<!-- HEADER -->
-		<header style="position:sticky;top:0;z-index:999;background:#F0EBE3;border-bottom:2px solid #1C2C4F;padding:0 32px;">
+		<header style="position:sticky;top:0;z-index:999;background:rgba(30,30,30,0.95);backdrop-filter:blur(12px);border-bottom:1px solid #333348;padding:0 32px;">
 			<div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px;">
-				<a href="/" style="text-decoration:none;display:flex;align-items:baseline;gap:4px;">
-					<span style="font-family:'Shippori Mincho','Noto Serif JP',serif;font-size:19px;font-weight:700;color:#8B1D25;letter-spacing:0.07em;text-transform:uppercase;">Unmuting</span>
-					<span style="font-family:'Shippori Mincho','Noto Serif JP',serif;font-size:19px;font-weight:400;color:#1C2C4F;letter-spacing:0.07em;text-transform:uppercase;">Ryukyu</span>
+				<a href="/" style="text-decoration:none;display:flex;align-items:baseline;gap:6px;">
+					<span style="font-family:'DM Sans', sans-serif;font-size:20px;font-weight:800;color:#c9302c;letter-spacing:0.04em;text-transform:uppercase;">Unmuting</span>
+					<span style="font-family:'DM Sans', sans-serif;font-size:20px;font-weight:400;color:#c8a951;letter-spacing:0.04em;text-transform:uppercase;">Ryukyu</span>
 				</a>
-				<nav style="display:flex;align-items:center;gap:28px;">
-					<a href="/" style="text-decoration:none;color:#1C2C4F;font-family:'Noto Sans JP',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.04em;">Home</a>
-					<a href="/videos/" style="text-decoration:none;color:#1C2C4F;font-family:'Noto Sans JP',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.04em;">Videos</a>
-					<a href="/blog/" style="text-decoration:none;color:#1C2C4F;font-family:'Noto Sans JP',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.04em;">Blog</a>
-					<a href="/services/" style="text-decoration:none;color:#1C2C4F;font-family:'Noto Sans JP',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.04em;">Services</a>
-					<a href="/about/" style="text-decoration:none;color:#1C2C4F;font-family:'Noto Sans JP',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.04em;">About</a>
-					<a href="https://www.youtube.com/@letsgokinawa?sub_confirmation=1" target="_blank" rel="noopener noreferrer" style="text-decoration:none;background:#8B1D25;color:#F0EBE3;font-family:'Noto Sans JP',sans-serif;font-size:13px;font-weight:700;padding:9px 20px;border-radius:2px;letter-spacing:0.05em;display:inline-flex;align-items:center;gap:7px;">
-						<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-						Subscribe
+				<nav style="display:flex;align-items:center;gap:32px;">
+					<a href="/" style="text-decoration:none;color:#f5f0e8;font-family:'DM Sans', sans-serif;font-size:14px;font-weight:500;letter-spacing:0.02em;transition:color 0.2s;">Home</a>
+					<a href="/videos/" style="text-decoration:none;color:#f5f0e8;font-family:'DM Sans', sans-serif;font-size:14px;font-weight:500;letter-spacing:0.02em;transition:color 0.2s;">Videos</a>
+					<a href="/blog/" style="text-decoration:none;color:#f5f0e8;font-family:'DM Sans', sans-serif;font-size:14px;font-weight:500;letter-spacing:0.02em;transition:color 0.2s;">Blog</a>
+					<a href="/services/" style="text-decoration:none;color:#f5f0e8;font-family:'DM Sans', sans-serif;font-size:14px;font-weight:500;letter-spacing:0.02em;transition:color 0.2s;">Services</a>
+					<a href="/about/" style="text-decoration:none;color:#f5f0e8;font-family:'DM Sans', sans-serif;font-size:14px;font-weight:500;letter-spacing:0.02em;transition:color 0.2s;">About</a>
+					<a href="https://www.youtube.com/@letsgokinawa" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:#c8a951;font-family:'DM Sans', sans-serif;font-size:14px;font-weight:700;letter-spacing:0.02em;display:inline-flex;align-items:center;gap:8px;border-bottom:1px solid #c8a951;padding-bottom:2px;">
+						YouTube
 					</a>
 				</nav>
 			</div>
 		</header>
 
-		<slot />
+		<main>
+			<slot />
+		</main>
 
 		<!-- FOOTER -->
-		<footer style="background:#1C2C4F;padding:72px 32px 40px;">
+		<footer style="background:#232340;padding:80px 32px 48px;border-top:1px solid #333348;">
 			<div style="max-width:1200px;margin:0 auto;">
-				<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:48px;margin-bottom:56px;">
-					<div style="max-width:380px;">
-						<div style="margin-bottom:16px;">
-							<span style="font-family:'Shippori Mincho','Noto Serif JP',serif;font-size:20px;font-weight:700;color:#D4C9BC;letter-spacing:0.07em;text-transform:uppercase;">Unmuting</span>
-							<span style="font-family:'Shippori Mincho','Noto Serif JP',serif;font-size:20px;font-weight:400;color:#8B9BB8;letter-spacing:0.07em;text-transform:uppercase;"> Ryukyu</span>
+				<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:64px;margin-bottom:64px;">
+					<div style="max-width:400px;">
+						<div style="margin-bottom:24px;">
+							<span style="font-family:'DM Sans', sans-serif;font-size:22px;font-weight:800;color:#f5f0e8;letter-spacing:0.04em;text-transform:uppercase;">Unmuting</span>
+							<span style="font-family:'DM Sans', sans-serif;font-size:22px;font-weight:400;color:#c8a951;letter-spacing:0.04em;text-transform:uppercase;"> Ryukyu</span>
 						</div>
-						<p style="color:#8B9BB8;font-family:'Noto Serif JP',serif;font-size:14px;line-height:1.9;margin:0 0 20px 0;">Revealing the hidden stories of Okinawa's struggle, culture, and resilience through documentary filmmaking.</p>
-						<div style="width:40px;height:2px;background:#8B1D25;"></div>
+						<p style="color:#9ca3af;font-family:'Inter', sans-serif;font-size:15px;line-height:1.8;margin:0 0 24px 0;">Revealing the hidden stories of Okinawa's struggle, culture, and resilience through documentary filmmaking.</p>
+						<div style="width:48px;height:2px;background:#c9302c;"></div>
 					</div>
-					<div style="display:flex;gap:56px;flex-wrap:wrap;">
+					<div style="display:flex;gap:72px;flex-wrap:wrap;">
 						<div>
-							<p style="color:#8B1D25;font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.18em;margin:0 0 20px 0;border-bottom:1px solid #2a3d60;padding-bottom:12px;">Navigate</p>
-							<a href="/" style="display:block;text-decoration:none;color:#8B9BB8;font-family:'Noto Sans JP',sans-serif;font-size:13px;margin-bottom:12px;">Home</a>
-							<a href="/videos/" style="display:block;text-decoration:none;color:#8B9BB8;font-family:'Noto Sans JP',sans-serif;font-size:13px;margin-bottom:12px;">Videos</a>
-							<a href="/blog/" style="display:block;text-decoration:none;color:#8B9BB8;font-family:'Noto Sans JP',sans-serif;font-size:13px;margin-bottom:12px;">Blog</a>
-							<a href="/services/" style="display:block;text-decoration:none;color:#8B9BB8;font-family:'Noto Sans JP',sans-serif;font-size:13px;margin-bottom:12px;">Services</a>
-							<a href="/about/" style="display:block;text-decoration:none;color:#8B9BB8;font-family:'Noto Sans JP',sans-serif;font-size:13px;">About</a>
+							<p style="color:#c9302c;font-family:'DM Sans', sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;margin:0 0 24px 0;">Navigate</p>
+							<a href="/" style="display:block;text-decoration:none;color:#9ca3af;font-family:'Inter', sans-serif;font-size:14px;margin-bottom:14px;">Home</a>
+							<a href="/videos/" style="display:block;text-decoration:none;color:#9ca3af;font-family:'Inter', sans-serif;font-size:14px;margin-bottom:14px;">Videos</a>
+							<a href="/blog/" style="display:block;text-decoration:none;color:#9ca3af;font-family:'Inter', sans-serif;font-size:14px;margin-bottom:14px;">Blog</a>
+							<a href="/services/" style="display:block;text-decoration:none;color:#9ca3af;font-family:'Inter', sans-serif;font-size:14px;margin-bottom:14px;">Services</a>
+							<a href="/about/" style="display:block;text-decoration:none;color:#9ca3af;font-family:'Inter', sans-serif;font-size:14px;">About</a>
 						</div>
 						<div>
-							<p style="color:#8B1D25;font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.18em;margin:0 0 20px 0;border-bottom:1px solid #2a3d60;padding-bottom:12px;">Connect</p>
-							<a href="https://www.youtube.com/@letsgokinawa" target="_blank" rel="noopener noreferrer" style="display:block;text-decoration:none;color:#8B9BB8;font-family:'Noto Sans JP',sans-serif;font-size:13px;margin-bottom:12px;">YouTube</a>
-							<a href="https://www.instagram.com/unmutingryukyu/" target="_blank" rel="noopener noreferrer" style="display:block;text-decoration:none;color:#8B9BB8;font-family:'Noto Sans JP',sans-serif;font-size:13px;margin-bottom:12px;">Instagram</a>
-							<a href="https://x.com/letsgokinawa" target="_blank" rel="noopener noreferrer" style="display:block;text-decoration:none;color:#8B9BB8;font-family:'Noto Sans JP',sans-serif;font-size:13px;margin-bottom:12px;">X / Twitter</a>
-							<a href="https://www.tiktok.com/@letsgokinawa" target="_blank" rel="noopener noreferrer" style="display:block;text-decoration:none;color:#8B9BB8;font-family:'Noto Sans JP',sans-serif;font-size:13px;">TikTok</a>
+							<p style="color:#c9302c;font-family:'DM Sans', sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;margin:0 0 24px 0;">Connect</p>
+							<a href="https://www.youtube.com/@letsgokinawa" target="_blank" rel="noopener noreferrer" style="display:block;text-decoration:none;color:#9ca3af;font-family:'Inter', sans-serif;font-size:14px;margin-bottom:14px;">YouTube</a>
+							<a href="https://www.instagram.com/unmutingryukyu/" target="_blank" rel="noopener noreferrer" style="display:block;text-decoration:none;color:#9ca3af;font-family:'Inter', sans-serif;font-size:14px;margin-bottom:14px;">Instagram</a>
+							<a href="https://x.com/letsgokinawa" target="_blank" rel="noopener noreferrer" style="display:block;text-decoration:none;color:#9ca3af;font-family:'Inter', sans-serif;font-size:14px;margin-bottom:14px;">X / Twitter</a>
+							<a href="https://www.tiktok.com/@letsgokinawa" target="_blank" rel="noopener noreferrer" style="display:block;text-decoration:none;color:#9ca3af;font-family:'Inter', sans-serif;font-size:14px;">TikTok</a>
 						</div>
 						<div>
-							<p style="color:#8B1D25;font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.18em;margin:0 0 20px 0;border-bottom:1px solid #2a3d60;padding-bottom:12px;">Business</p>
-							<a href="/services/" style="display:block;text-decoration:none;color:#8B9BB8;font-family:'Noto Sans JP',sans-serif;font-size:13px;margin-bottom:12px;">Services</a>
-							<a href="/contact/" style="display:block;text-decoration:none;color:#8B9BB8;font-family:'Noto Sans JP',sans-serif;font-size:13px;">Contact</a>
+							<p style="color:#c9302c;font-family:'DM Sans', sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;margin:0 0 24px 0;">Business</p>
+							<a href="/services/" style="display:block;text-decoration:none;color:#9ca3af;font-family:'Inter', sans-serif;font-size:14px;margin-bottom:14px;">Services</a>
+							<a href="/contact/" style="display:block;text-decoration:none;color:#9ca3af;font-family:'Inter', sans-serif;font-size:14px;">Contact</a>
 						</div>
 					</div>
 				</div>
-				<div style="border-top:1px solid #2a3d60;padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
-					<p style="color:#3d5078;font-family:'Noto Sans JP',sans-serif;font-size:12px;margin:0;">&copy; 2026 Unmuting Ryukyu. All rights reserved.</p>
-					<p style="color:#3d5078;font-family:'Noto Sans JP',sans-serif;font-size:12px;margin:0;">A documentary project by <a href="/about/" style="color:#8B9BB8;text-decoration:none;">Shohei Toguchi</a></p>
+				<div style="border-top:1px solid #2a2a3e;padding-top:32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+					<p style="color:#666666;font-family:'Inter', sans-serif;font-size:13px;margin:0;">&copy; 2026 Unmuting Ryukyu. All rights reserved.</p>
+					<p style="color:#666666;font-family:'Inter', sans-serif;font-size:13px;margin:0;">A documentary project by <a href="/about/" style="color:#9ca3af;text-decoration:none;">Shohei Toguchi</a></p>
 				</div>
 			</div>
 		</footer>
