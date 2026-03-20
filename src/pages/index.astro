@@ -1,132 +1,341 @@
 ---
-import Layout from '../layouts/Layout.astro';
+// Language Gate — no shared layout, standalone cinematic entrance
 ---
+<!doctype html>
+<html lang="mul">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shohei Toguchi — Documentary Filmmaker & Video Editor. Okinawa's stories to the world." />
+  <title>Shohei Toguchi | Documentary Filmmaker & Video Editor</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-<Layout title="Unmuting Ryukyu — Revealing Okinawa's Hidden Stories">
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #0E2330;
+    }
 
-	<!-- HERO -->
-	<section style="min-height:calc(100vh - 72px);display:flex;align-items:center;position:relative;overflow:hidden;padding:80px 32px;">
-		<!-- Background Image with Blur -->
-		<div style="position:absolute;inset:-15px;z-index:0;background-image:url('/images/shuri-castle.jpg');background-size:cover;background-position:center;filter:blur(8px);opacity:0.4;"></div>
-		<!-- Navy Overlay -->
-		<div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom, rgba(28,44,79,0.90) 0%, rgba(28,44,79,0.78) 50%, rgba(28,44,79,0.90) 100%);"></div>
-		<!-- Subtle Red Glow -->
-		<div style="position:absolute;bottom:0;right:0;width:60%;height:60%;z-index:2;background:radial-gradient(circle at 70% 70%, rgba(139,29,37,0.15) 0%, transparent 70%);pointer-events:none;"></div>
+    /* ── Carousel background ── */
+    .bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+    }
 
-		<!-- Left accent bar (Bingata Red) -->
-		<div style="position:absolute;top:0;left:0;width:6px;height:100%;background:#8B1D25;z-index:3;"></div>
+    .slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      animation: carousel 21s infinite;
+    }
 
-		<div style="max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:4;">
-			<p style="color:#C8A86A;font-family:'DM Sans', sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.3em;margin:0 0 32px 0;padding-left:16px;border-left:3px solid #8B1D25;">A Documentary Series by Shohei Toguchi</p>
-			
-			<h1 style="font-family:'DM Sans', sans-serif;font-size:clamp(64px,10vw,120px);font-weight:900;line-height:0.9;margin:0;letter-spacing:-0.02em;text-transform:uppercase;color:#F0EBE3;">
-				UNMUTING<br/>
-				<span style="color:#8B1D25;">RYUKYU</span>
-			</h1>
+    /* Using the existing image; swap these once you add more photos */
+    .slide:nth-child(1) {
+      background-image: url('/images/shuri-castle.jpg');
+      animation-delay: 0s;
+    }
+    .slide:nth-child(2) {
+      background-image: url('/images/shuri-castle.jpg');
+      filter: hue-rotate(10deg) brightness(0.95);
+      animation-delay: 7s;
+    }
+    .slide:nth-child(3) {
+      background-image: url('/images/shuri-castle.jpg');
+      filter: hue-rotate(-10deg) brightness(0.9);
+      animation-delay: 14s;
+    }
 
-			<div style="width:64px;height:2px;background:#8B1D25;margin:40px 0;"></div>
-			
-			<p style="font-family:'Inter', sans-serif;font-size:18px;color:#F0EBE3;line-height:1.8;margin:0 0 56px 0;max-width:540px;">
-				Revealing the hidden stories of Okinawa's struggle, culture, and resilience through documentary filmmaking.
-			</p>
+    @keyframes carousel {
+      0%       { opacity: 0; transform: scale(1.06); }
+      6%       { opacity: 1; transform: scale(1.03); }
+      30%      { opacity: 1; transform: scale(1.00); }
+      38%, 100%{ opacity: 0; transform: scale(0.97); }
+    }
 
-			<div style="display:flex;gap:20px;flex-wrap:wrap;">
-				<a href="https://www.youtube.com/@letsgokinawa" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:inline-flex;align-items:center;gap:12px;background:#8B1D25;color:#F0EBE3;font-family:'DM Sans', sans-serif;font-weight:700;padding:18px 36px;border-radius:4px;font-size:15px;letter-spacing:0.02em;box-shadow:0 10px 20px rgba(139,29,37,0.35);">
-					<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-					Watch on YouTube
-				</a>
-				<a href="/videos/" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(240,235,227,0.3);color:#F0EBE3;font-family:'DM Sans', sans-serif;font-weight:500;padding:18px 36px;border-radius:4px;font-size:15px;letter-spacing:0.02em;backdrop-filter:blur(4px);">
-					Watch Documentaries →
-				</a>
-			</div>
-		</div>
-	</section>
+    /* ── Dark gradient overlay ── */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(to right,  rgba(14,35,48,0.85) 0%, rgba(14,35,48,0.50) 60%, rgba(14,35,48,0.75) 100%),
+        linear-gradient(to bottom, rgba(14,35,48,0.60) 0%, rgba(14,35,48,0.25) 50%, rgba(14,35,48,0.80) 100%);
+    }
 
-	<!-- FEATURED VIDEO -->
-	<section style="padding:120px 32px;background:#F0EBE3;border-bottom:1px solid #D0C5BA;">
-		<div style="max-width:1100px;margin:0 auto;">
-			<div style="display:flex;align-items:center;gap:20px;margin-bottom:64px;">
-				<div style="width:6px;height:32px;background:#8B1D25;"></div>
-				<div>
-					<p style="color:#8B1D25;font-family:'DM Sans', sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;margin:0 0 8px 0;">Featured Work</p>
-					<h2 style="font-family:'DM Sans', sans-serif;font-size:clamp(32px,5vw,48px);font-weight:800;color:#1C2C4F;margin:0;letter-spacing:-0.01em;">Operation Iceberg</h2>
-				</div>
-			</div>
+    /* ── Water-blue accent line (left edge) ── */
+    .accent-v {
+      position: fixed;
+      top: 0; left: 0;
+      width: 4px; height: 100vh;
+      background: linear-gradient(to bottom, transparent 0%, #7EC8E3 40%, #5BAAC8 60%, transparent 100%);
+      z-index: 5;
+    }
 
-			<div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:64px;align-items:center;">
-				<div style="background:#000;border:1px solid #D0C5BA;position:relative;overflow:hidden;border-radius:4px;box-shadow:20px 20px 0px rgba(139,29,37,0.08);">
-					<div style="position:relative;padding-bottom:56.25%;height:0;">
-						<iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/2v2vOrz5RXA" title="Battle of Okinawa" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
-					</div>
-				</div>
-				<div>
-					<span style="display:inline-block;background:#8B1D25;color:#F0EBE3;font-family:'DM Sans', sans-serif;font-size:11px;font-weight:700;padding:6px 16px;border-radius:2px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:24px;">Deep Documentary</span>
-					<h3 style="font-family:'DM Sans', sans-serif;font-size:28px;font-weight:800;color:#1C2C4F;margin:0 0 24px 0;line-height:1.3;">10 Realities of the Battle of Okinawa</h3>
-					<p style="color:#4A3F3B;font-family:'Inter', sans-serif;font-size:16px;line-height:1.8;margin:0 0 32px 0;">A peaceful kingdom crushed between empires. This documentary explores the pivotal Battle of Okinawa and its lasting impact on the island's soul.</p>
-					<a href="/blog/battle-of-okinawa/" style="text-decoration:none;color:#C8A86A;font-family:'DM Sans', sans-serif;font-weight:700;font-size:14px;letter-spacing:0.05em;display:inline-flex;align-items:center;gap:8px;text-transform:uppercase;border-bottom:1px solid #C8A86A;padding-bottom:4px;">
-						Read the Full Story →
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
+    /* ── Top bar ── */
+    .topbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 20;
+      padding: 24px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      opacity: 0;
+      animation: fadeIn 1s 0.2s forwards;
+    }
 
-	<!-- MISSION SECTION -->
-	<section style="padding:120px 32px;background:#1C2C4F;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,0.12);">
-		<div style="position:absolute;right:-60px;top:50%;transform:translateY(-50%);font-family:'Shippori Mincho', serif;font-size:320px;font-weight:800;color:rgba(200,168,106,0.04);line-height:1;user-select:none;pointer-events:none;">琉</div>
-		<div style="max-width:900px;margin:0 auto;position:relative;z-index:1;">
-			<div style="display:flex;align-items:center;gap:20px;margin-bottom:48px;">
-				<div style="width:6px;height:32px;background:#8B1D25;"></div>
-				<p style="color:#8B1D25;font-family:'DM Sans', sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;margin:0;">The Mission</p>
-			</div>
-			<h2 style="font-family:'DM Sans', sans-serif;font-size:clamp(32px,5vw,56px);font-weight:800;color:#F0EBE3;margin:0 0 40px 0;line-height:1.1;letter-spacing:-0.02em;">We tell stories<br/>that matter.</h2>
-			<p style="color:#A8B8C8;font-family:'Inter', sans-serif;font-size:18px;line-height:1.9;margin:0 0 32px 0;max-width:720px;">
-				Okinawa's history has been silenced for too long. Through filmmaking and storytelling, we bring to light the struggle, resilience, and beauty of Ryukyuan culture — connecting the global Uchinanchu community with their roots.
-			</p>
-			<p style="color:#C8A86A;font-family:'Inter', sans-serif;font-size:20px;line-height:1.8;margin:0 0 64px 0;max-width:720px;font-style:italic;font-weight:300;">
-				"Language is peace. To know a culture's tongue is to respect its soul."
-			</p>
-			<div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;">
-				<a href="/about/" style="text-decoration:none;background:#F0EBE3;color:#1C2C4F;font-family:'DM Sans', sans-serif;font-weight:700;padding:16px 36px;border-radius:4px;font-size:14px;letter-spacing:0.02em;">
-					About Shohei →
-				</a>
-				<a href="/services/" style="text-decoration:none;color:#C8A86A;font-family:'DM Sans', sans-serif;font-weight:700;font-size:14px;letter-spacing:0.05em;text-transform:uppercase;">
-					Our Services
-				</a>
-			</div>
-		</div>
-	</section>
+    .logo {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #7EC8E3;
+      text-decoration: none;
+    }
 
-	<!-- SERVICES PREVIEW -->
-	<section style="padding:120px 32px;background:#E8E2D8;">
-		<div style="max-width:1200px;margin:0 auto;">
-			<div style="display:flex;align-items:center;gap:20px;margin-bottom:64px;">
-				<div style="width:6px;height:32px;background:#8B1D25;"></div>
-				<h2 style="font-family:'DM Sans', sans-serif;font-size:clamp(32px,5vw,48px);font-weight:800;color:#1C2C4F;margin:0;letter-spacing:-0.01em;">Services</h2>
-			</div>
+    .topbar-social {
+      display: flex;
+      gap: 24px;
+    }
 
-			<div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:32px;">
-				<div style="background:#F0EBE3;padding:48px;border:1px solid #D0C5BA;border-radius:4px;transition:border-color 0.3s;">
-					<p style="color:#C8A86A;font-family:'DM Sans', sans-serif;font-size:12px;font-weight:800;letter-spacing:0.2em;margin:0 0 24px 0;">01</p>
-					<h3 style="font-family:'DM Sans', sans-serif;font-size:24px;font-weight:700;color:#1C2C4F;margin:0 0 16px 0;">Documentary Films</h3>
-					<p style="color:#4A3F3B;font-family:'Inter', sans-serif;font-size:15px;line-height:1.8;margin:0;">Long-form storytelling that captures culture and history with cinematic depth and global perspective.</p>
-				</div>
-				<div style="background:#F0EBE3;padding:48px;border:1px solid #8B1D25;border-radius:4px;">
-					<p style="color:#C8A86A;font-family:'DM Sans', sans-serif;font-size:12px;font-weight:800;letter-spacing:0.2em;margin:0 0 24px 0;">02</p>
-					<h3 style="font-family:'DM Sans', sans-serif;font-size:24px;font-weight:700;color:#1C2C4F;margin:0 0 16px 0;">Short-form Content</h3>
-					<p style="color:#4A3F3B;font-family:'Inter', sans-serif;font-size:15px;line-height:1.8;margin:0;">High-impact Reels, Shorts, and TikTok content designed for maximum engagement and reach.</p>
-				</div>
-				<div style="background:#F0EBE3;padding:48px;border:1px solid #D0C5BA;border-radius:4px;">
-					<p style="color:#C8A86A;font-family:'DM Sans', sans-serif;font-size:12px;font-weight:800;letter-spacing:0.2em;margin:0 0 24px 0;">03</p>
-					<h3 style="font-family:'DM Sans', sans-serif;font-size:24px;font-weight:700;color:#1C2C4F;margin:0 0 16px 0;">Corporate & Events</h3>
-					<p style="color:#4A3F3B;font-family:'Inter', sans-serif;font-size:15px;line-height:1.8;margin:0;">Cinematic coverage for events and brands that need more than just recording—they need a story.</p>
-				</div>
-			</div>
+    .topbar-social a {
+      color: rgba(245,250,251,0.45);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
 
-			<div style="margin-top:64px;text-align:center;">
-				<a href="/services/" style="text-decoration:none;color:#1C2C4F;font-family:'DM Sans', sans-serif;font-weight:700;font-size:14px;letter-spacing:0.1em;text-transform:uppercase;border-bottom:1px solid #8B1D25;padding-bottom:6px;">View All Service Details →</a>
-			</div>
-		</div>
-	</section>
+    .topbar-social a:hover { color: #7EC8E3; }
 
-</Layout>
+    /* ── Main gate content ── */
+    .gate {
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #7EC8E3;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.5s forwards;
+    }
+
+    .name {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(52px, 9vw, 108px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 0.92;
+      color: #F5FAFB;
+      margin-bottom: 10px;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.7s forwards;
+    }
+
+    .name span {
+      color: #7EC8E3;
+      display: block;
+    }
+
+    .tagline {
+      font-family: 'Noto Sans JP', 'DM Sans', sans-serif;
+      font-size: clamp(13px, 1.8vw, 16px);
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: rgba(245,250,251,0.55);
+      margin-bottom: 72px;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.9s forwards;
+    }
+
+    /* ── Language selector ── */
+    .lang-grid {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      opacity: 0;
+      animation: fadeUp 0.9s 1.1s forwards;
+    }
+
+    .lang-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 28px 48px;
+      border: 1px solid rgba(126,200,227,0.25);
+      background: rgba(14,35,48,0.45);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      color: #F5FAFB;
+      text-decoration: none;
+      transition: all 0.35s ease;
+      min-width: 180px;
+    }
+
+    .lang-btn:first-child { border-radius: 6px 0 0 6px; }
+    .lang-btn:last-child  { border-radius: 0 6px 6px 0; }
+
+    .lang-btn:hover {
+      background: rgba(126,200,227,0.18);
+      border-color: #7EC8E3;
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(126,200,227,0.15);
+      z-index: 1;
+    }
+
+    .lang-btn.featured {
+      border-color: rgba(126,200,227,0.55);
+      background: rgba(126,200,227,0.10);
+    }
+
+    .lang-btn .lg {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .lang-btn .sm {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245,250,251,0.4);
+    }
+
+    .lang-btn:hover .sm { color: #7EC8E3; }
+
+    /* ── Bottom strip ── */
+    .bottom-strip {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 20;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(126,200,227,0.10);
+      opacity: 0;
+      animation: fadeIn 1s 1.4s forwards;
+    }
+
+    .bottom-strip p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      color: rgba(245,250,251,0.30);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .lang-grid {
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+      }
+      .lang-btn {
+        border-radius: 0;
+        padding: 20px 32px;
+      }
+      .lang-btn:first-child { border-radius: 6px 6px 0 0; }
+      .lang-btn:last-child  { border-radius: 0 0 6px 6px; }
+      .topbar-social { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Carousel -->
+  <div class="bg">
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+  </div>
+
+  <!-- Overlays -->
+  <div class="overlay"></div>
+  <div class="accent-v"></div>
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <span class="logo">Unmuting Ryukyu</span>
+    <nav class="topbar-social">
+      <a href="https://www.youtube.com/@letsgokinawa" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.instagram.com/unmutingryukyu/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://x.com/letsgokinawa" target="_blank" rel="noopener">X</a>
+    </nav>
+  </header>
+
+  <!-- Gate -->
+  <main class="gate">
+    <p class="eyebrow">Documentary Filmmaker &amp; Video Editor</p>
+
+    <h1 class="name">
+      SHOHEI
+      <span>TOGUCHI</span>
+    </h1>
+
+    <p class="tagline">沖縄・琉球の物語を世界へ &nbsp;|&nbsp; Okinawa's stories to the world</p>
+
+    <div class="lang-grid">
+      <a href="/en/" class="lang-btn featured">
+        <span class="lg">English</span>
+        <span class="sm">EN — Global</span>
+      </a>
+      <a href="/ja/" class="lang-btn">
+        <span class="lg" style="font-family:'Noto Sans JP',sans-serif;font-weight:700;">日本語</span>
+        <span class="sm">JA — 日本向け</span>
+      </a>
+      <a href="/zh/" class="lang-btn">
+        <span class="lg">中文</span>
+        <span class="sm">ZH — Coming soon</span>
+      </a>
+    </div>
+  </main>
+
+  <!-- Bottom strip -->
+  <footer class="bottom-strip">
+    <p>unmutingryukyu.com</p>
+    <p>&copy; 2026 Shohei Toguchi. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

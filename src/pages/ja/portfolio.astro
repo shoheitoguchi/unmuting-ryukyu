@@ -1,0 +1,309 @@
+---
+import LayoutJA from '../../layouts/LayoutJA.astro';
+
+// 作品データ
+const works = [
+  {
+    id: 1,
+    category: 'ドキュメンタリー',
+    categoryEn: 'Documentary',
+    title: '沖縄戦の10の真実',
+    titleSub: '10 Realities of the Battle of Okinawa',
+    desc: '帝国に挟まれた平和な王国の悲劇。第二次世界大戦における沖縄戦の実態と、現代の沖縄に刻まれた傷跡を描く長編ドキュメンタリー。',
+    youtubeId: '2v2vOrz5RXA',
+    tags: ['歴史', '戦争', 'ドキュメンタリー'],
+    lang: ['EN', 'JA'],
+    featured: true,
+  },
+  {
+    id: 2,
+    category: '文化',
+    categoryEn: 'Culture',
+    title: '三線伝説 — 琉球の魂',
+    titleSub: 'The Legend of Sanshin',
+    desc: '三本の弦に刻まれた琉球の歴史。三線がいかに沖縄のアイデンティティと抵抗の象徴となったのか、その起源から現代までを追う。',
+    youtubeId: null,
+    tags: ['文化', '音楽', '三線'],
+    lang: ['EN'],
+    featured: false,
+  },
+  {
+    id: 3,
+    category: '文化',
+    categoryEn: 'Culture',
+    title: '三線 vs 三味線 — ふたつの弦楽器',
+    titleSub: 'Sanshin vs. Shamisen',
+    desc: '外見は似ているが、魂は異なる。琉球と本土、それぞれの弦楽器が持つ文化的背景と歴史的な関係性を解説。',
+    youtubeId: null,
+    tags: ['文化', '音楽', '比較'],
+    lang: ['EN'],
+    featured: false,
+  },
+  {
+    id: 4,
+    category: 'ディアスポラ',
+    categoryEn: 'Diaspora',
+    title: 'ハワイのウチナーンチュ',
+    titleSub: 'Uchinaanchu in Hawaii',
+    desc: '太平洋を渡った沖縄移民たちの旅。ハワイで守り続けるウチナーアイデンティティと、世代を超えて受け継がれる文化を記録。',
+    youtubeId: null,
+    tags: ['ディアスポラ', '移民', 'アイデンティティ'],
+    lang: ['EN'],
+    featured: false,
+  },
+  {
+    id: 5,
+    category: '歴史',
+    categoryEn: 'History',
+    title: '沖縄が日本を嫌う4つの理由',
+    titleSub: '4 Cruel Facts Japan Hides About Okinawa',
+    desc: '教科書に載らない沖縄と日本の関係。基地問題、歴史的抑圧、文化の消滅、そして現在進行形の課題を直視する。',
+    youtubeId: null,
+    tags: ['歴史', '政治', '沖縄問題'],
+    lang: ['EN'],
+    featured: false,
+  },
+  {
+    id: 6,
+    category: '歴史',
+    categoryEn: 'History',
+    title: '辺野古 — 消えゆく海',
+    titleSub: 'Henoko: The Disappearing Sea',
+    desc: '世界有数のサンゴ礁が米軍基地の建設によって埋め立てられていく。辺野古の海と、それを守ろうとする人々の記録。',
+    youtubeId: null,
+    tags: ['環境', '基地問題', '辺野古'],
+    lang: ['EN'],
+    featured: false,
+  },
+];
+
+const categories = ['すべて', 'ドキュメンタリー', '文化', 'ディアスポラ', '歴史'];
+---
+
+<LayoutJA title="ポートフォリオ | 渡口翔平 — 動画編集者・ドキュメンタリー映像作家">
+
+  <!-- ── PAGE HERO ── -->
+  <section style="background:#1A3A4A;padding:100px 40px 80px;position:relative;overflow:hidden;border-bottom:3px solid #7EC8E3;">
+    <!-- Watermark -->
+    <div style="position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-family:'Noto Serif JP',serif;font-size:240px;font-weight:700;color:rgba(126,200,227,0.05);line-height:1;user-select:none;pointer-events:none;">作</div>
+    <!-- Left accent -->
+    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:linear-gradient(to bottom,transparent,#7EC8E3 30%,#5BAAC8 70%,transparent);"></div>
+
+    <div style="max-width:1000px;margin:0 auto;position:relative;z-index:1;">
+      <p style="font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;color:#7EC8E3;margin:0 0 24px 0;">PORTFOLIO</p>
+      <h1 style="font-family:'Noto Serif JP',serif;font-size:clamp(36px,6vw,64px);font-weight:700;color:#F5FAFB;margin:0 0 24px 0;line-height:1.1;letter-spacing:-0.01em;">
+        制作実績・<span style="color:#7EC8E3;">ポートフォリオ</span>
+      </h1>
+      <div style="width:48px;height:3px;background:#7EC8E3;margin-bottom:28px;"></div>
+      <p style="font-family:'Noto Sans JP',sans-serif;font-size:15px;color:rgba(245,250,251,0.65);line-height:2;max-width:600px;font-weight:300;">
+        沖縄・琉球の文化と歴史をテーマに、英語・日本語・中国語圏向けに制作したドキュメンタリー映像とコンテンツの一覧です。
+      </p>
+
+      <!-- Stats row -->
+      <div style="display:flex;gap:48px;flex-wrap:wrap;margin-top:48px;padding-top:40px;border-top:1px solid rgba(126,200,227,0.15);">
+        {[
+          { num: '15+', label: '制作本数' },
+          { num: '3', label: '言語対応' },
+          { num: '2,400+', label: 'YouTube登録者' },
+          { num: '英・日・中', label: '対象マーケット' },
+        ].map(({ num, label }) => (
+          <div>
+            <p style="font-family:'DM Sans',sans-serif;font-size:28px;font-weight:900;color:#7EC8E3;margin:0 0 4px 0;line-height:1;">{num}</p>
+            <p style="font-family:'Noto Sans JP',sans-serif;font-size:12px;color:rgba(245,250,251,0.45);margin:0;letter-spacing:0.05em;">{label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURED WORK ── -->
+  <section style="padding:100px 40px 0;background:#F5FAFB;">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:48px;">
+        <div style="width:5px;height:32px;background:#7EC8E3;border-radius:2px;"></div>
+        <div>
+          <p style="font-family:'Noto Sans JP',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.3em;color:#7EC8E3;margin:0 0 6px 0;">FEATURED</p>
+          <h2 style="font-family:'Noto Serif JP',serif;font-size:clamp(22px,3.5vw,32px);font-weight:700;color:#1A3A4A;margin:0;">代表作</h2>
+        </div>
+      </div>
+
+      <!-- Featured card: wide layout -->
+      <div style="background:#FFFFFF;border:1px solid #BFE8F7;border-radius:12px;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-bottom:80px;">
+        <!-- Video -->
+        <div style="position:relative;padding-bottom:56.25%;height:0;background:#0E2330;min-height:240px;">
+          <iframe
+            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+            src="https://www.youtube.com/embed/2v2vOrz5RXA"
+            title="沖縄戦の10の真実"
+            allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+        <!-- Info -->
+        <div style="padding:48px 40px;display:flex;flex-direction:column;justify-content:center;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;flex-wrap:wrap;">
+            <span style="background:#E8F6FB;color:#5BAAC8;font-family:'Noto Sans JP',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.1em;padding:5px 12px;border-radius:3px;">ドキュメンタリー</span>
+            <span style="background:#1A3A4A;color:#7EC8E3;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.1em;padding:5px 10px;border-radius:3px;">★ 代表作</span>
+            <span style="background:transparent;border:1px solid rgba(126,200,227,0.3);color:#7EC8E3;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.08em;padding:4px 10px;border-radius:3px;">EN · JA</span>
+          </div>
+          <h3 style="font-family:'Noto Serif JP',serif;font-size:clamp(20px,3vw,28px);font-weight:700;color:#1A3A4A;margin:0 0 8px 0;line-height:1.3;">沖縄戦の10の真実</h3>
+          <p style="font-family:'Noto Sans JP',sans-serif;font-size:13px;color:#4A6B7A;margin:0 0 20px 0;letter-spacing:0.05em;">10 Realities of the Battle of Okinawa</p>
+          <p style="font-family:'Noto Sans JP',sans-serif;font-size:14px;color:#4A6B7A;line-height:2;margin:0 0 32px 0;font-weight:300;">
+            帝国に挟まれた平和な王国の悲劇。第二次世界大戦における沖縄戦の実態と、現代の沖縄に刻まれた傷跡を描く長編ドキュメンタリー。英語圏向けに制作し、世界中のオキナワファンに届けた代表作。
+          </p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;">
+            {['歴史', '戦争', 'ドキュメンタリー'].map((tag) => (
+              <span style="background:#F5FAFB;border:1px solid #BFE8F7;color:#4A6B7A;font-family:'Noto Sans JP',sans-serif;font-size:11px;padding:4px 12px;border-radius:20px;">#{tag}</span>
+            ))}
+          </div>
+          <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
+            <a href="https://www.youtube.com/watch?v=2v2vOrz5RXA" target="_blank" rel="noopener" style="text-decoration:none;background:#7EC8E3;color:#1A3A4A;font-family:'Noto Sans JP',sans-serif;font-weight:700;font-size:13px;padding:12px 28px;border-radius:4px;">YouTubeで見る</a>
+            <a href="/blog/battle-of-okinawa/" style="text-decoration:none;color:#7EC8E3;font-family:'Noto Sans JP',sans-serif;font-weight:700;font-size:13px;border-bottom:1px solid #7EC8E3;padding-bottom:2px;">記事を読む →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ALL WORKS GRID ── -->
+  <section style="padding:0 40px 120px;background:#F5FAFB;">
+    <div style="max-width:1200px;margin:0 auto;">
+
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:40px;">
+        <div style="width:5px;height:32px;background:#7EC8E3;border-radius:2px;"></div>
+        <div>
+          <p style="font-family:'Noto Sans JP',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.3em;color:#7EC8E3;margin:0 0 6px 0;">ALL WORKS</p>
+          <h2 style="font-family:'Noto Serif JP',serif;font-size:clamp(22px,3.5vw,32px);font-weight:700;color:#1A3A4A;margin:0;">全作品一覧</h2>
+        </div>
+      </div>
+
+      <!-- Category filter pills (visual only — no JS needed for static) -->
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px;">
+        {categories.map((cat, i) => (
+          <span style={`font-family:'Noto Sans JP',sans-serif;font-size:12px;font-weight:${i === 0 ? '700' : '400'};padding:8px 20px;border-radius:20px;cursor:pointer;border:1px solid ${i === 0 ? '#7EC8E3' : '#BFE8F7'};background:${i === 0 ? '#7EC8E3' : 'transparent'};color:${i === 0 ? '#1A3A4A' : '#4A6B7A'};`}>
+            {cat}
+          </span>
+        ))}
+      </div>
+
+      <!-- Works grid -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px;">
+        {works.map((work) => (
+          <article style="background:#FFFFFF;border:1px solid #BFE8F7;border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow 0.3s,transform 0.3s;">
+
+            <!-- Thumbnail / Video -->
+            <div style="position:relative;padding-bottom:56.25%;height:0;background:#0E2330;flex-shrink:0;">
+              {work.youtubeId ? (
+                <iframe
+                  style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                  src={`https://www.youtube.com/embed/${work.youtubeId}`}
+                  title={work.title}
+                  allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              ) : (
+                <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1A3A4A 0%,#0E2330 100%);gap:10px;">
+                  <div style="width:48px;height:48px;border-radius:50%;border:2px solid rgba(126,200,227,0.3);display:flex;align-items:center;justify-content:center;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(126,200,227,0.5)"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                  <span style="font-family:'Noto Sans JP',sans-serif;font-size:10px;color:rgba(126,200,227,0.4);letter-spacing:0.15em;">準備中</span>
+                </div>
+              )}
+              <!-- Category badge overlay -->
+              <div style="position:absolute;top:12px;left:12px;z-index:1;">
+                <span style="background:rgba(14,35,48,0.85);backdrop-filter:blur(4px);color:#7EC8E3;font-family:'Noto Sans JP',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.1em;padding:5px 10px;border-radius:3px;">
+                  {work.category}
+                </span>
+              </div>
+              <!-- Language badges -->
+              <div style="position:absolute;top:12px;right:12px;display:flex;gap:4px;z-index:1;">
+                {work.lang.map((l) => (
+                  <span style="background:rgba(14,35,48,0.85);backdrop-filter:blur(4px);color:rgba(126,200,227,0.8);font-family:'DM Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;padding:4px 8px;border-radius:2px;">{l}</span>
+                ))}
+              </div>
+            </div>
+
+            <!-- Card body -->
+            <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+              <h3 style="font-family:'Noto Serif JP',serif;font-size:17px;font-weight:700;color:#1A3A4A;margin:0 0 6px 0;line-height:1.4;">{work.title}</h3>
+              <p style="font-family:'DM Sans',sans-serif;font-size:11px;color:#A0B8C4;margin:0 0 14px 0;letter-spacing:0.05em;">{work.titleSub}</p>
+              <p style="font-family:'Noto Sans JP',sans-serif;font-size:13px;color:#4A6B7A;line-height:1.85;margin:0 0 20px 0;font-weight:300;flex:1;">{work.desc}</p>
+
+              <!-- Tags -->
+              <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;">
+                {work.tags.map((tag) => (
+                  <span style="background:#F5FAFB;border:1px solid #BFE8F7;color:#4A6B7A;font-family:'Noto Sans JP',sans-serif;font-size:10px;padding:3px 10px;border-radius:20px;">#{tag}</span>
+                ))}
+              </div>
+
+              <!-- Action -->
+              {work.youtubeId ? (
+                <a
+                  href={`https://www.youtube.com/watch?v=${work.youtubeId}`}
+                  target="_blank"
+                  rel="noopener"
+                  style="text-decoration:none;color:#7EC8E3;font-family:'Noto Sans JP',sans-serif;font-weight:700;font-size:12px;display:inline-flex;align-items:center;gap:6px;border-bottom:1px solid rgba(126,200,227,0.4);padding-bottom:3px;width:fit-content;"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                  YouTubeで見る
+                </a>
+              ) : (
+                <span style="color:rgba(126,200,227,0.35);font-family:'Noto Sans JP',sans-serif;font-size:12px;letter-spacing:0.05em;">近日公開予定</span>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section style="padding:100px 40px;background:#FFFFFF;border-top:1px solid #BFE8F7;">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:64px;">
+        <div style="width:5px;height:32px;background:#7EC8E3;border-radius:2px;"></div>
+        <div>
+          <p style="font-family:'Noto Sans JP',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.3em;color:#7EC8E3;margin:0 0 6px 0;">SKILLS</p>
+          <h2 style="font-family:'Noto Serif JP',serif;font-size:clamp(22px,3.5vw,32px);font-weight:700;color:#1A3A4A;margin:0;">スキル・専門性</h2>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;">
+        {[
+          { icon: '🎬', title: '動画編集', desc: 'Adobe Premiere Pro による長編・短編編集。カラーグレーディング、字幕制作（3言語）対応。' },
+          { icon: '🌐', title: '多言語コンテンツ', desc: '英語・日本語・中国語でのスクリプト作成、ナレーション、字幕翻訳。TOEIC955点。' },
+          { icon: '📽️', title: 'ドキュメンタリー', desc: '撮影から編集まで一貫対応。文化・歴史テーマに特化したストーリーテリング。' },
+          { icon: '📱', title: 'ショートフォーム', desc: 'YouTube Shorts・Reels・TikTok向け最適化。バイラルを意識したカット編集。' },
+          { icon: '🔍', title: 'リサーチ力', desc: '歴史・文化テーマの深い調査能力。一次資料・現地取材をもとにした信頼性の高いコンテンツ制作。' },
+          { icon: '🎵', title: '三線演奏', desc: '沖縄伝統楽器・三線の演奏者。音楽・文化コンテンツの制作にも対応可能。' },
+        ].map(({ icon, title, desc }) => (
+          <div style="background:#F5FAFB;border:1px solid #BFE8F7;border-radius:8px;padding:28px 24px;">
+            <p style="font-size:28px;margin:0 0 14px 0;line-height:1;">{icon}</p>
+            <h3 style="font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;color:#1A3A4A;margin:0 0 10px 0;">{title}</h3>
+            <p style="font-family:'Noto Sans JP',sans-serif;font-size:12px;color:#4A6B7A;line-height:1.85;margin:0;font-weight:300;">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section style="padding:80px 40px;background:linear-gradient(105deg,#1A3A4A 0%,#2B5873 100%);border-top:3px solid #7EC8E3;">
+    <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:48px;align-items:center;">
+      <div>
+        <p style="font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.3em;color:#7EC8E3;margin:0 0 16px 0;">CONTACT</p>
+        <h2 style="font-family:'Noto Serif JP',serif;font-size:clamp(22px,4vw,36px);font-weight:700;color:#F5FAFB;margin:0 0 16px 0;line-height:1.3;">映像制作のご相談</h2>
+        <p style="font-family:'Noto Sans JP',sans-serif;font-size:14px;color:rgba(245,250,251,0.60);margin:0;line-height:2;font-weight:300;">
+          ドキュメンタリー・SNS動画・企業映像など、<br/>お気軽にお声がけください。
+        </p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <a href="/ja/contact/" style="text-decoration:none;display:block;background:#7EC8E3;color:#1A3A4A;font-family:'Noto Sans JP',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.08em;padding:16px 32px;border-radius:4px;text-align:center;">お問い合わせはこちら →</a>
+        <a href="mailto:letsgokinawa@gmail.com" style="text-decoration:none;display:block;border:1px solid rgba(126,200,227,0.35);color:#7EC8E3;font-family:'Noto Sans JP',sans-serif;font-weight:400;font-size:13px;padding:14px 32px;border-radius:4px;text-align:center;letter-spacing:0.05em;">letsgokinawa@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+</LayoutJA>

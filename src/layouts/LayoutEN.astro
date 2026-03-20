@@ -1,0 +1,303 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Shohei Toguchi — Documentary filmmaker & video editor revealing Okinawa's hidden stories for global audiences." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <meta name="author" content="Shohei Toguchi" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@300;400;700&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>{title}</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: #F5FAFB;
+      color: #1A3A4A;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(26,58,74,0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(126,200,227,0.15);
+      padding: 0 40px;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 68px;
+    }
+
+    .site-logo {
+      text-decoration: none;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .logo-first {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      color: #7EC8E3;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .logo-second {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: rgba(245,250,251,0.75);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .site-nav a {
+      text-decoration: none;
+      color: rgba(245,250,251,0.75);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .site-nav a:hover { color: #7EC8E3; }
+
+    .nav-cta {
+      text-decoration: none;
+      background: #7EC8E3;
+      color: #1A3A4A !important;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      border-radius: 3px;
+      transition: background 0.2s, transform 0.2s !important;
+    }
+
+    .nav-cta:hover {
+      background: #5BAAC8 !important;
+      transform: translateY(-1px);
+    }
+
+    .lang-switch {
+      color: rgba(245,250,251,0.35) !important;
+      font-size: 12px !important;
+      border-left: 1px solid rgba(126,200,227,0.2);
+      padding-left: 24px !important;
+    }
+
+    .lang-switch:hover { color: #7EC8E3 !important; }
+
+    /* ── Footer ── */
+    .site-footer {
+      background: #1A3A4A;
+      padding: 72px 40px 40px;
+      border-top: 1px solid rgba(126,200,227,0.12);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 56px;
+      margin-bottom: 56px;
+    }
+
+    .footer-brand {
+      max-width: 360px;
+    }
+
+    .footer-logo {
+      margin-bottom: 20px;
+    }
+
+    .footer-desc {
+      color: rgba(245,250,251,0.5);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .footer-accent {
+      width: 40px;
+      height: 2px;
+      background: #7EC8E3;
+      margin-top: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 64px;
+      flex-wrap: wrap;
+    }
+
+    .footer-col h4 {
+      color: #7EC8E3;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin: 0 0 20px 0;
+    }
+
+    .footer-col a {
+      display: block;
+      text-decoration: none;
+      color: rgba(245,250,251,0.5);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      margin-bottom: 12px;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover { color: #7EC8E3; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(126,200,227,0.10);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-bottom p {
+      color: rgba(245,250,251,0.28);
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      margin: 0;
+    }
+
+    .footer-bottom a {
+      color: rgba(245,250,251,0.50);
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .site-nav { gap: 16px; }
+      .site-nav .nav-hide { display: none; }
+      .footer-top { flex-direction: column; gap: 40px; }
+      .footer-links { gap: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/en/" class="site-logo">
+        <span class="logo-first">Unmuting</span>
+        <span class="logo-second">Ryukyu</span>
+      </a>
+      <nav class="site-nav">
+        <a href="/en/" class="nav-hide">Home</a>
+        <a href="/en/portfolio/" class="nav-hide">Portfolio</a>
+        <a href="/en/videos/">Videos</a>
+        <a href="/en/blog/" class="nav-hide">Blog</a>
+        <a href="/en/about/" class="nav-hide">About</a>
+        <a href="/en/contact/" class="nav-cta">Contact</a>
+        <a href="/ja/" class="lang-switch">日本語</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main>
+    <slot />
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span style="font-family:'DM Sans',sans-serif;font-size:20px;font-weight:800;color:#7EC8E3;letter-spacing:0.05em;text-transform:uppercase;">Unmuting</span>
+            <span style="font-family:'DM Sans',sans-serif;font-size:20px;font-weight:400;color:rgba(245,250,251,0.6);letter-spacing:0.05em;text-transform:uppercase;"> Ryukyu</span>
+          </div>
+          <p class="footer-desc">Documentary filmmaker &amp; video editor revealing Okinawa's hidden stories — for English, Japanese, and Chinese-speaking audiences worldwide.</p>
+          <div class="footer-accent"></div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Content</h4>
+            <a href="/en/portfolio/">Portfolio</a>
+            <a href="/en/videos/">Videos</a>
+            <a href="/en/blog/">Blog</a>
+          </div>
+          <div class="footer-col">
+            <h4>About</h4>
+            <a href="/en/about/">Shohei Toguchi</a>
+            <a href="/en/services/">Services</a>
+            <a href="/en/contact/">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <a href="https://www.youtube.com/@letsgokinawa" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.instagram.com/unmutingryukyu/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://x.com/letsgokinawa" target="_blank" rel="noopener">X / Twitter</a>
+            <a href="https://www.tiktok.com/@letsgokinawa" target="_blank" rel="noopener">TikTok</a>
+          </div>
+          <div class="footer-col">
+            <h4>Language</h4>
+            <a href="/en/">English</a>
+            <a href="/ja/">日本語</a>
+            <a href="/zh/">中文 (soon)</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Unmuting Ryukyu. All rights reserved.</p>
+        <p>Documentary project by <a href="/en/about/">Shohei Toguchi</a></p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
