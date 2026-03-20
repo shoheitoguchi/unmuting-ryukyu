@@ -4,7 +4,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "渡口翔平 — ドキュメンタリー映像作家・動画編集者。沖縄・琉球の物語を世界へ。" } = Astro.props;
+const { title, description = "渡口翔平 — 映像編集者・ドキュメンタリー作家。失われゆく文化と記憶を、映像と言語で次世代へ。" } = Astro.props;
 ---
 
 <!doctype html>
@@ -20,269 +20,261 @@ const { title, description = "渡口翔平 — ドキュメンタリー映像作
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Sans:wght@400;500;700;800;900&display=swap" rel="stylesheet">
   <title>{title}</title>
   <style>
-    *, *::before, *::after { box-sizing: border-box; }
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Noto Sans JP', sans-serif;
-      background: #F5FAFB;
-      color: #1A3A4A;
-      -webkit-font-smoothing: antialiased;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-deep:    #09131F;
+      --bg-base:    #0D1B2A;
+      --bg-card:    #0F2030;
+      --cyan:       #22D3EE;
+      --cyan-dim:   #0891B2;
+      --cyan-pale:  rgba(34,211,238,0.10);
+      --cyan-border:rgba(34,211,238,0.18);
+      --text-hi:    #EFF8FF;
+      --text-mid:   #94C4D8;
+      --text-lo:    #4A7A96;
     }
 
-    /* ── Header ── */
-    .site-header {
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg-base);
+      color: var(--text-hi);
+      font-family: 'Noto Sans JP', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ── */
+    .ja-header {
       position: sticky;
       top: 0;
       z-index: 999;
-      background: rgba(26,58,74,0.97);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(126,200,227,0.15);
-      padding: 0 40px;
+      background: rgba(9,19,31,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--cyan-border);
     }
 
-    .header-inner {
+    .ja-header__inner {
       max-width: 1200px;
       margin: 0 auto;
+      padding: 0 40px;
+      height: 64px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      height: 68px;
+      justify-content: space-between;
     }
 
-    .site-logo {
+    .ja-logo {
       text-decoration: none;
       display: flex;
       align-items: baseline;
-      gap: 10px;
+      gap: 12px;
     }
 
-    .logo-ja {
-      font-family: 'Noto Serif JP', serif;
+    .ja-logo__kanji {
+      font-family: 'Shippori Mincho', serif;
       font-size: 17px;
-      font-weight: 700;
-      color: #7EC8E3;
-      letter-spacing: 0.08em;
+      font-weight: 600;
+      color: var(--cyan);
+      letter-spacing: 0.1em;
     }
 
-    .logo-en {
+    .ja-logo__en {
       font-family: 'DM Sans', sans-serif;
-      font-size: 13px;
-      font-weight: 400;
-      color: rgba(245,250,251,0.45);
-      letter-spacing: 0.08em;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-lo);
+      letter-spacing: 0.18em;
       text-transform: uppercase;
     }
 
-    .site-nav {
+    .ja-nav {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 32px;
     }
 
-    .site-nav a {
-      text-decoration: none;
-      color: rgba(245,250,251,0.75);
+    .ja-nav a {
       font-family: 'Noto Sans JP', sans-serif;
       font-size: 13px;
       font-weight: 400;
-      letter-spacing: 0.05em;
+      color: var(--text-mid);
+      text-decoration: none;
+      letter-spacing: 0.04em;
       transition: color 0.2s;
     }
 
-    .site-nav a:hover { color: #7EC8E3; }
+    .ja-nav a:hover { color: var(--cyan); }
 
-    .nav-cta {
-      text-decoration: none;
-      background: #7EC8E3;
-      color: #1A3A4A !important;
-      font-family: 'Noto Sans JP', sans-serif;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      padding: 10px 20px;
-      border-radius: 3px;
-      transition: background 0.2s, transform 0.2s !important;
-    }
-
-    .nav-cta:hover {
-      background: #5BAAC8 !important;
-      transform: translateY(-1px);
-    }
-
-    .lang-switch {
-      color: rgba(245,250,251,0.35) !important;
+    .ja-nav__cta {
+      font-family: 'Noto Sans JP', sans-serif !important;
       font-size: 12px !important;
-      border-left: 1px solid rgba(126,200,227,0.2);
-      padding-left: 24px !important;
+      font-weight: 700 !important;
+      color: var(--bg-deep) !important;
+      background: var(--cyan);
+      padding: 9px 22px;
+      border-radius: 3px;
+      letter-spacing: 0.06em !important;
+      transition: opacity 0.2s !important;
+    }
+
+    .ja-nav__cta:hover { opacity: 0.85 !important; }
+
+    .ja-nav__lang {
       font-family: 'DM Sans', sans-serif !important;
+      font-size: 11px !important;
+      color: var(--text-lo) !important;
+      border-left: 1px solid var(--cyan-border);
+      padding-left: 24px !important;
+      letter-spacing: 0.12em !important;
+      text-transform: uppercase;
     }
 
-    .lang-switch:hover { color: #7EC8E3 !important; }
+    .ja-nav__lang:hover { color: var(--cyan) !important; }
 
-    /* ── Footer ── */
-    .site-footer {
-      background: #1A3A4A;
-      padding: 72px 40px 40px;
-      border-top: 1px solid rgba(126,200,227,0.12);
+    /* ── FOOTER ── */
+    .ja-footer {
+      background: var(--bg-deep);
+      border-top: 1px solid var(--cyan-border);
+      padding: 64px 40px 40px;
     }
 
-    .footer-inner {
+    .ja-footer__inner {
       max-width: 1200px;
       margin: 0 auto;
     }
 
-    .footer-top {
+    .ja-footer__top {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 56px;
-      margin-bottom: 56px;
+      gap: 48px;
+      margin-bottom: 48px;
     }
 
-    .footer-brand { max-width: 360px; }
-
-    .footer-desc {
-      color: rgba(245,250,251,0.5);
+    .ja-footer__brand p {
       font-family: 'Noto Sans JP', sans-serif;
       font-size: 13px;
+      color: var(--text-lo);
       line-height: 2;
-      margin: 16px 0 0 0;
+      margin-top: 16px;
+      max-width: 300px;
     }
 
-    .footer-accent {
-      width: 40px;
-      height: 2px;
-      background: #7EC8E3;
-      margin-top: 20px;
+    .ja-footer__links {
+      display: flex;
+      gap: 56px;
+      flex-wrap: wrap;
     }
 
-    .footer-links { display: flex; gap: 64px; flex-wrap: wrap; }
-
-    .footer-col h4 {
-      color: #7EC8E3;
-      font-family: 'Noto Sans JP', sans-serif;
-      font-size: 11px;
+    .ja-footer__col h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      margin: 0 0 20px 0;
+      color: var(--cyan);
+      margin-bottom: 18px;
     }
 
-    .footer-col a {
+    .ja-footer__col a {
       display: block;
-      text-decoration: none;
-      color: rgba(245,250,251,0.5);
       font-family: 'Noto Sans JP', sans-serif;
       font-size: 13px;
-      margin-bottom: 12px;
+      color: var(--text-lo);
+      text-decoration: none;
+      margin-bottom: 10px;
       transition: color 0.2s;
     }
 
-    .footer-col a:hover { color: #7EC8E3; }
+    .ja-footer__col a:hover { color: var(--cyan); }
 
-    .footer-bottom {
-      border-top: 1px solid rgba(126,200,227,0.10);
-      padding-top: 28px;
+    .ja-footer__bottom {
+      border-top: 1px solid var(--cyan-border);
+      padding-top: 24px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 12px;
     }
 
-    .footer-bottom p {
-      color: rgba(245,250,251,0.28);
-      font-family: 'Noto Sans JP', sans-serif;
-      font-size: 12px;
-      margin: 0;
-    }
-
-    .footer-bottom a {
-      color: rgba(245,250,251,0.50);
-      text-decoration: none;
+    .ja-footer__bottom p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      color: var(--text-lo);
+      letter-spacing: 0.04em;
     }
 
     @media (max-width: 768px) {
-      .site-nav { gap: 16px; }
-      .site-nav .nav-hide { display: none; }
-      .footer-top { flex-direction: column; gap: 40px; }
-      .footer-links { gap: 40px; }
+      .ja-header__inner { padding: 0 24px; }
+      .ja-nav .nav-hide { display: none; }
+      .ja-footer { padding: 48px 24px 32px; }
+      .ja-footer__top { flex-direction: column; gap: 32px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="/ja/" class="site-logo">
-        <span class="logo-ja">渡口翔平</span>
-        <span class="logo-en">Unmuting Ryukyu</span>
+  <header class="ja-header">
+    <div class="ja-header__inner">
+      <a href="/ja/" class="ja-logo">
+        <span class="ja-logo__kanji">渡口 翔平</span>
+        <span class="ja-logo__en">Shohei Toguchi</span>
       </a>
-      <nav class="site-nav">
+      <nav class="ja-nav">
         <a href="/ja/" class="nav-hide">ホーム</a>
-        <a href="/ja/portfolio/" class="nav-hide">ポートフォリオ</a>
-        <a href="/ja/videos/" class="nav-hide">動画</a>
-        <a href="/ja/blog/" class="nav-hide">ブログ</a>
-        <a href="/ja/about/">自己紹介</a>
-        <a href="/ja/contact/" class="nav-cta">お問い合わせ</a>
-        <a href="/en/" class="lang-switch">EN</a>
+        <a href="/ja/portfolio/" class="nav-hide">作品集</a>
+        <a href="/ja/about/" class="nav-hide">について</a>
+        <a href="/ja/contact/" class="ja-nav__cta">お問い合わせ</a>
+        <a href="/en/" class="ja-nav__lang">EN</a>
       </nav>
     </div>
   </header>
 
-  <!-- CONTENT -->
   <main>
     <slot />
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div class="footer-brand">
+  <footer class="ja-footer">
+    <div class="ja-footer__inner">
+      <div class="ja-footer__top">
+        <div class="ja-footer__brand">
           <div>
-            <span style="font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;color:#7EC8E3;letter-spacing:0.08em;">渡口翔平</span>
-            <span style="font-family:'DM Sans',sans-serif;font-size:13px;font-weight:400;color:rgba(245,250,251,0.4);letter-spacing:0.06em;text-transform:uppercase;margin-left:10px;">Unmuting Ryukyu</span>
+            <span style="font-family:'Shippori Mincho',serif;font-size:18px;font-weight:600;color:var(--cyan);letter-spacing:0.1em;">渡口 翔平</span>
           </div>
-          <p class="footer-desc">沖縄・琉球の歴史と文化を<br/>ドキュメンタリー映像で世界へ発信。</p>
-          <div class="footer-accent"></div>
+          <p>映像と言語で、失われゆく文化を記録する。</p>
         </div>
-        <div class="footer-links">
-          <div class="footer-col">
-            <h4>コンテンツ</h4>
-            <a href="/ja/portfolio/">ポートフォリオ</a>
-            <a href="/ja/videos/">動画一覧</a>
-            <a href="/ja/blog/">ブログ</a>
-          </div>
-          <div class="footer-col">
-            <h4>プロフィール</h4>
-            <a href="/ja/about/">渡口翔平について</a>
-            <a href="/ja/services/">サービス</a>
+        <div class="ja-footer__links">
+          <div class="ja-footer__col">
+            <h4>Pages</h4>
+            <a href="/ja/">ホーム</a>
+            <a href="/ja/portfolio/">作品集</a>
+            <a href="/ja/about/">について</a>
             <a href="/ja/contact/">お問い合わせ</a>
           </div>
-          <div class="footer-col">
+          <div class="ja-footer__col">
             <h4>SNS</h4>
             <a href="https://www.youtube.com/@letsgokinawa" target="_blank" rel="noopener">YouTube</a>
             <a href="https://www.instagram.com/unmutingryukyu/" target="_blank" rel="noopener">Instagram</a>
             <a href="https://x.com/letsgokinawa" target="_blank" rel="noopener">X / Twitter</a>
           </div>
-          <div class="footer-col">
-            <h4>言語</h4>
+          <div class="ja-footer__col">
+            <h4>Language</h4>
             <a href="/ja/">日本語</a>
             <a href="/en/">English</a>
             <a href="/zh/">中文（準備中）</a>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 渡口翔平 / Unmuting Ryukyu. All rights reserved.</p>
-        <p><a href="/ja/about/">渡口翔平</a> によるドキュメンタリープロジェクト</p>
+      <div class="ja-footer__bottom">
+        <p>&copy; 2026 渡口翔平. All rights reserved.</p>
+        <p>Okinawa, Japan</p>
       </div>
     </div>
   </footer>
