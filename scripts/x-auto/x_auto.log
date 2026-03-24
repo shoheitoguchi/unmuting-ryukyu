@@ -1,0 +1,50 @@
+2026-03-23 10:30:20,395 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-03-23 11:05:21,995 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-03-23 11:06:07,513 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-03-23 11:06:25,388 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-03-23 11:06:38,533 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-03-23 11:16:51,709 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2026-03-23 11:17:31,468 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-23 11:18:40,110 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-23 11:19:15,611 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-23 11:19:50,182 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-23 12:21:18,576 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-23 12:43:49,174 - ERROR - Error posting tweet: 403 Forbidden
+Your client app is not configured with the appropriate oauth1 app permissions for this endpoint.
+2026-03-23 12:43:49,177 - WARNING - Threads API credentials not set. Skipping Threads post.
+2026-03-23 12:52:27,760 - ERROR - Error posting tweet: 402 Payment Required
+Your enrolled account [2035903677798498304] does not have any credits to fulfill this request.
+2026-03-23 12:52:27,762 - WARNING - Threads API credentials not set. Skipping Threads post.
+2026-03-23 12:55:12,116 - INFO - Successfully posted: 2035943419743543371
+2026-03-23 12:55:12,121 - WARNING - Threads API credentials not set. Skipping Threads post.
+2026-03-23 12:58:13,367 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-23 12:59:02,779 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-23 13:03:19,087 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-23 13:04:02,596 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-23 13:09:05,650 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-23 13:09:29,405 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-23 13:09:46,665 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 529 <none>"
+2026-03-23 13:09:46,665 - INFO - Retrying request to /v1/messages in 0.466919 seconds
+2026-03-23 13:09:50,318 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 529 <none>"
+2026-03-23 13:09:50,319 - INFO - Retrying request to /v1/messages in 0.946318 seconds
+2026-03-23 13:09:54,989 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 529 <none>"
+2026-03-23 13:10:39,854 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-23 13:15:09,817 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-23 13:15:57,353 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-23 13:20:47,523 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-23 13:26:03,844 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-23 14:50:47,473 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-23 14:53:24,421 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-23 14:55:02,329 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-23 14:56:07,061 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-23 14:59:29,561 - INFO - Successfully posted: 2035974698954342776
+2026-03-23 14:59:29,563 - WARNING - Threads API credentials not set. Skipping Threads post.
+2026-03-23 15:09:46,958 - INFO - Successfully posted: 2035977288576279022
+2026-03-23 15:09:46,960 - WARNING - Threads API credentials not set. Skipping Threads post.
+2026-03-23 23:55:29,206 - INFO - Successfully posted: 2036109585699025362
+2026-03-23 23:55:29,207 - WARNING - Threads API credentials not set. Skipping Threads post.
+2026-03-24 21:44:48,899 - INFO - --- Starting X Automation Loop ---
+2026-03-24 21:44:48,899 - INFO - Attempting to post to X: The Ryukyu Kingdom existed for 450 years—three tim...
+2026-03-24 21:44:49,336 - INFO - Successfully posted: 2036439090720284732
+2026-03-24 21:44:49,338 - WARNING - Threads API credentials not set. Skipping Threads post.
+2026-03-24 21:44:49,340 - INFO - Successfully processed post and updated queue.

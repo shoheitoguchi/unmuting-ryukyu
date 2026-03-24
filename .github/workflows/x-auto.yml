@@ -1,0 +1,45 @@
+name: X Auto Posting
+
+on:
+  schedule:
+    # 1時間おきに実行 (GMT/UTC)
+    - cron: '0 * * * *'
+  workflow_dispatch: # 手動実行用
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        working-directory: scripts/x-auto
+        run: |
+          pip install tweepy anthropic
+
+      - name: Run posting script
+        working-directory: scripts/x-auto
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_KEY_SECRET: ${{ secrets.X_API_KEY_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          GITHUB_ACTIONS: "true"
+        run: python main.py
+
+      - name: Commit and push if queue changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add scripts/x-auto/post_queue.json
+          git add scripts/x-auto/x_auto.log
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update post queue after posting" && git push)
