@@ -48,3 +48,9 @@ Your enrolled account [2035903677798498304] does not have any credits to fulfill
 2026-03-24 21:44:49,336 - INFO - Successfully posted: 2036439090720284732
 2026-03-24 21:44:49,338 - WARNING - Threads API credentials not set. Skipping Threads post.
 2026-03-24 21:44:49,340 - INFO - Successfully processed post and updated queue.
+2026-03-24 14:10:44,883 - INFO - --- Running X Automation (One-shot Mode) ---
+2026-03-24 14:10:44,883 - INFO - Attempting to post to X: Whataboutism is a defensive shield, not a pursuit ...
+2026-03-24 14:10:45,015 - ERROR - Error posting tweet: 403 Forbidden
+You are not permitted to perform this action.
+2026-03-24 14:10:45,016 - WARNING - Threads API credentials not set. Skipping Threads post.
+2026-03-24 14:10:45,016 - ERROR - X Post failed. Keeping in queue for retry.
