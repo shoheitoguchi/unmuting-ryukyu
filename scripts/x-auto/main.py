@@ -96,20 +96,31 @@ Output ONLY a JSON list in the following format:
         logging.error(f"Error parsing AI response: {e}")
 
 def check_and_post():
-    """現在の時刻を見て、投稿すべきものがあれば投稿する (承認済みのもののみ)"""
+    """現在の時刻と日付を見て、投稿すべきものがあれば投稿する (承認済みのもののみ)"""
     queue = load_file(config.POST_QUEUE_FILE)
     if not queue:
         return
 
     now = datetime.datetime.now()
-    now_str = now.strftime("%H:%M")
+    now_date_str = now.strftime("%Y-%m-%d")
+    now_time_str = now.strftime("%H:%M")
     
     to_post = None
     remaining_queue = []
     
-    # 予定時間を過ぎているものを1件だけ取り出す
+    # 予定日時を過ぎているものを1件だけ取り出す
     for item in queue:
-        if not to_post and item['time'] <= now_str:
+        # date フィールドがない場合は今日とみなす
+        item_date = item.get('date', now_date_str)
+        
+        should_post = False
+        if not to_post:
+            if item_date < now_date_str:
+                should_post = True
+            elif item_date == now_date_str and item['time'] <= now_time_str:
+                should_post = True
+        
+        if should_post:
             to_post = item
         else:
             remaining_queue.append(item)
@@ -127,7 +138,7 @@ def check_and_post():
         else:
             logging.error("X Post failed. Keeping in queue for retry.")
     else:
-        logging.info(f"No pending posts for current time: {now_str}")
+        logging.info(f"No pending posts for current datetime: {now_date_str} {now_time_str}")
 
 if __name__ == "__main__":
     # GitHub Actions等のワンショット実行モード
