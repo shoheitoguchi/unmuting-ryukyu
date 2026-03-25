@@ -118,3 +118,9 @@ You are not permitted to perform this action.
 2026-03-25 06:47:24,284 - INFO - No pending posts for current datetime: 2026-03-25 06:47
 2026-03-25 07:44:07,724 - INFO - --- Running X Automation (One-shot Mode) ---
 2026-03-25 07:44:07,724 - INFO - No pending posts for current datetime: 2026-03-25 07:44
+2026-03-25 08:35:26,029 - INFO - --- Running X Automation (One-shot Mode) ---
+2026-03-25 08:35:26,029 - INFO - Attempting to post to X: Hajichi tattoos were the pride of Ryukyuan women.
+...
+2026-03-25 08:35:26,269 - INFO - Successfully posted: 2036723620018332102
+2026-03-25 08:35:26,270 - WARNING - Threads API credentials not set. Skipping Threads post.
+2026-03-25 08:35:26,271 - INFO - Successfully processed post and updated queue.
