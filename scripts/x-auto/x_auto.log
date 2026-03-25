@@ -124,3 +124,5 @@ You are not permitted to perform this action.
 2026-03-25 08:35:26,269 - INFO - Successfully posted: 2036723620018332102
 2026-03-25 08:35:26,270 - WARNING - Threads API credentials not set. Skipping Threads post.
 2026-03-25 08:35:26,271 - INFO - Successfully processed post and updated queue.
+2026-03-25 09:40:47,838 - INFO - --- Running X Automation (One-shot Mode) ---
+2026-03-25 09:40:47,838 - INFO - No pending posts for current datetime: 2026-03-25 09:40
