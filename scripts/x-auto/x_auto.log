@@ -192,3 +192,8 @@ You are not permitted to perform this action.
 You are not permitted to perform this action.
 2026-03-25 23:22:41,026 - WARNING - Threads API credentials not set. Skipping Threads post.
 2026-03-25 23:22:41,026 - ERROR - X Post failed. Keeping in queue for retry.
+2026-03-26 01:08:12,518 - INFO - --- Running X Automation (One-shot Mode) ---
+2026-03-26 01:08:12,518 - INFO - Attempting to post to X: Karate is now a global sport, but its roots are in...
+2026-03-26 01:08:12,780 - INFO - Successfully posted: 2036973460002365818
+2026-03-26 01:08:12,781 - WARNING - Threads API credentials not set. Skipping Threads post.
+2026-03-26 01:08:12,782 - INFO - Successfully processed post and updated queue.
