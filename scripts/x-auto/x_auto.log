@@ -223,3 +223,9 @@ But in many ways, incon...
 You are not permitted to perform this action.
 2026-03-26 14:17:38,798 - WARNING - Threads API credentials not set. Skipping Threads post.
 2026-03-26 14:17:38,798 - ERROR - X Post failed. Keeping in queue for retry.
+2026-03-26 16:00:19,719 - INFO - --- Running X Automation (One-shot Mode) ---
+2026-03-26 16:00:19,719 - INFO - Attempting to post to X: Whataboutism is a defensive shield, not a pursuit ...
+2026-03-26 16:00:19,894 - ERROR - Error posting tweet: 403 Forbidden
+You are not permitted to perform this action.
+2026-03-26 16:00:19,895 - WARNING - Threads API credentials not set. Skipping Threads post.
+2026-03-26 16:00:19,895 - ERROR - X Post failed. Keeping in queue for retry.
