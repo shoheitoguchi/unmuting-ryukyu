@@ -289,3 +289,8 @@ It is the...
 2026-03-27 09:41:38,228 - INFO - No pending posts for current datetime: 2026-03-27 09:41
 2026-03-27 10:26:05,900 - INFO - --- Running X Automation (One-shot Mode) ---
 2026-03-27 10:26:05,900 - INFO - No pending posts for current datetime: 2026-03-27 10:26
+2026-03-27 10:27:32,906 - INFO - --- Running X Automation (One-shot Mode) ---
+2026-03-27 10:27:32,906 - INFO - Attempting to post to X: March 27, 1879. The day the silence began. The ann...
+2026-03-27 10:27:33,225 - INFO - Successfully posted: 2037476610610192496
+2026-03-27 10:27:33,226 - WARNING - Threads API credentials not set. Skipping Threads post.
+2026-03-27 10:27:33,227 - INFO - Successfully processed post and updated queue.
