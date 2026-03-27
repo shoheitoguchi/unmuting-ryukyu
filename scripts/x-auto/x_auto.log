@@ -299,3 +299,4 @@ It is the...
 2026-03-27 10:39:05,269 - INFO - Successfully posted: 2037479513261523259
 2026-03-27 10:39:05,270 - WARNING - Threads API credentials not set. Skipping Threads post.
 2026-03-27 10:39:05,271 - INFO - Successfully processed post and updated queue.
+2026-03-27 10:41:26,096 - INFO - Successfully deleted: 2037479513261523259
