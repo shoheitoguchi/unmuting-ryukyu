@@ -112,13 +112,23 @@ def check_and_post():
     for item in queue:
         # date フィールドがない場合は今日とみなす
         item_date = item.get('date', now_date_str)
+        item_status = item.get('status', 'pending')
         
         should_post = False
         if not to_post:
+            # 日付が過去、または（今日かつ時間が経過）している
+            time_match = False
             if item_date < now_date_str:
-                should_post = True
+                time_match = True
             elif item_date == now_date_str and item['time'] <= now_time_str:
-                should_post = True
+                time_match = True
+            
+            # かつ、承認済みであること
+            if time_match:
+                if item_status == 'approved':
+                    should_post = True
+                else:
+                    logging.info(f"Post skipping (waiting for approval): {item['content'][:30]}...")
         
         if should_post:
             to_post = item

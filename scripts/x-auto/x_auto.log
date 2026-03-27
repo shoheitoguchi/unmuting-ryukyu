@@ -294,11 +294,3 @@ It is the...
 2026-03-27 10:27:33,225 - INFO - Successfully posted: 2037476610610192496
 2026-03-27 10:27:33,226 - WARNING - Threads API credentials not set. Skipping Threads post.
 2026-03-27 10:27:33,227 - INFO - Successfully processed post and updated queue.
-2026-03-27 10:32:49,384 - INFO - Successfully deleted: 2037476610610192496
-2026-03-27 10:35:28,923 - INFO - --- Running X Automation (One-shot Mode) ---
-2026-03-27 10:35:28,923 - INFO - Attempting to post to X: Whataboutism is a shield, not a pursuit of truth. ...
-2026-03-27 10:35:29,249 - INFO - Successfully posted: 2037478607140913230
-2026-03-27 10:35:29,249 - WARNING - Threads API credentials not set. Skipping Threads post.
-2026-03-27 10:35:29,250 - INFO - Successfully processed post and updated queue.
-2026-03-27 10:36:01,978 - INFO - --- Running X Automation (One-shot Mode) ---
-2026-03-27 10:36:01,978 - INFO - No pending posts for current datetime: 2026-03-27 10:36
