@@ -277,3 +277,5 @@ It is the...
 2026-03-27 01:07:36,242 - INFO - Successfully posted: 2037335694641623220
 2026-03-27 01:07:36,243 - WARNING - Threads API credentials not set. Skipping Threads post.
 2026-03-27 01:07:36,243 - INFO - Successfully processed post and updated queue.
+2026-03-27 04:23:04,269 - INFO - --- Running X Automation (One-shot Mode) ---
+2026-03-27 04:23:04,270 - INFO - No pending posts for current datetime: 2026-03-27 04:23
