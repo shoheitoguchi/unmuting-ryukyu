@@ -271,3 +271,9 @@ You are not permitted to perform this action.
 You are not permitted to perform this action.
 2026-03-26 23:19:05,123 - WARNING - Threads API credentials not set. Skipping Threads post.
 2026-03-26 23:19:05,123 - ERROR - X Post failed. Keeping in queue for retry.
+2026-03-27 01:07:35,999 - INFO - --- Running X Automation (One-shot Mode) ---
+2026-03-27 01:07:35,999 - INFO - Attempting to post to X: For Ryukyu, the sea is not a playground.
+It is the...
+2026-03-27 01:07:36,242 - INFO - Successfully posted: 2037335694641623220
+2026-03-27 01:07:36,243 - WARNING - Threads API credentials not set. Skipping Threads post.
+2026-03-27 01:07:36,243 - INFO - Successfully processed post and updated queue.
