@@ -300,3 +300,9 @@ It is the...
 2026-03-27 10:39:05,270 - WARNING - Threads API credentials not set. Skipping Threads post.
 2026-03-27 10:39:05,271 - INFO - Successfully processed post and updated queue.
 2026-03-27 10:41:26,096 - INFO - Successfully deleted: 2037479513261523259
+2026-03-27 10:44:53,419 - INFO - --- Running X Automation (One-shot Mode) ---
+2026-03-27 10:44:53,420 - INFO - Attempting to post to X: 147 years ago today, the 'Ryukyu Disposition' was ...
+2026-03-27 10:44:53,544 - ERROR - Error posting tweet: 403 Forbidden
+You are not allowed to create a Tweet with duplicate content.
+2026-03-27 10:44:53,545 - WARNING - Threads API credentials not set. Skipping Threads post.
+2026-03-27 10:44:53,545 - ERROR - X Post failed. Keeping in queue for retry.
