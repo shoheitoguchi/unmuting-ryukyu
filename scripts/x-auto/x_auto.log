@@ -330,3 +330,9 @@ You are not allowed to create a Tweet with duplicate content.
 You are not allowed to create a Tweet with duplicate content.
 2026-03-27 15:39:40,689 - WARNING - Threads API credentials not set. Skipping Threads post.
 2026-03-27 15:39:40,689 - ERROR - X Post failed. Keeping in queue for retry.
+2026-03-27 16:40:08,990 - INFO - --- Running X Automation (One-shot Mode) ---
+2026-03-27 16:40:08,990 - INFO - Attempting to post to X: Whataboutism is a shield, not a pursuit of truth. ...
+2026-03-27 16:40:09,164 - ERROR - Error posting tweet: 403 Forbidden
+You are not allowed to create a Tweet with duplicate content.
+2026-03-27 16:40:09,165 - WARNING - Threads API credentials not set. Skipping Threads post.
+2026-03-27 16:40:09,165 - ERROR - X Post failed. Keeping in queue for retry.
