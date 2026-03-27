@@ -5,6 +5,11 @@ on:
     # 1時間おきに実行 (GMT/UTC)
     - cron: '0 * * * *'
   workflow_dispatch: # 手動実行用
+    inputs:
+      tweet_id:
+        description: 'Delete tweet ID (Optional)'
+        required: false
+        default: ''
 
 jobs:
   post:
@@ -34,7 +39,12 @@ jobs:
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
           GITHUB_ACTIONS: "true"
-        run: python main.py
+        run: |
+          if [ "${{ github.event.inputs.tweet_id }}" != "" ]; then
+            python delete_tweet.py ${{ github.event.inputs.tweet_id }}
+          else
+            python main.py
+          fi
 
       - name: Commit and push if queue changed
         run: |

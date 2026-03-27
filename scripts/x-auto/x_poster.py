@@ -30,6 +30,18 @@ def post_tweet(text):
         print(f"Error: {e}")
         return None
 
+def delete_tweet(tweet_id):
+    """ツイートを削除する"""
+    try:
+        client = get_client()
+        response = client.delete_tweet(id=tweet_id)
+        logging.info(f"Successfully deleted: {tweet_id}")
+        return response
+    except Exception as e:
+        logging.error(f"Error deleting tweet {tweet_id}: {e}")
+        print(f"Error: {e}")
+        return None
+
 if __name__ == "__main__":
     # テスト投稿用
     test_text = "Testing X Automation System from Ryukyu."
