@@ -377,3 +377,5 @@ You are not allowed to create a Tweet with duplicate content.
 2026-03-27 23:20:54,090 - INFO - Successfully posted: 2037671229813821664
 2026-03-27 23:20:54,091 - WARNING - Threads API credentials not set. Skipping Threads post.
 2026-03-27 23:20:54,092 - INFO - Successfully processed post and updated queue.
+2026-03-28 01:02:01,209 - INFO - --- Running X Automation (One-shot Mode) ---
+2026-03-28 01:02:01,209 - INFO - No pending posts for current datetime: 2026-03-28 01:02
