@@ -620,3 +620,9 @@ You are not allowed to create a Tweet with duplicate content.
 Unauthorized
 2026-04-03 08:38:55,327 - WARNING - Threads API credentials not set. Skipping Threads post.
 2026-04-03 08:38:55,327 - ERROR - X Post failed. Keeping in queue for retry.
+2026-04-03 09:41:34,216 - INFO - --- Running X Automation (One-shot Mode) ---
+2026-04-03 09:41:34,216 - INFO - Attempting to post to X: I used to subscribe to the narrative that history ...
+2026-04-03 09:41:34,308 - ERROR - Error posting tweet: 401 Unauthorized
+Unauthorized
+2026-04-03 09:41:34,309 - WARNING - Threads API credentials not set. Skipping Threads post.
+2026-04-03 09:41:34,309 - ERROR - X Post failed. Keeping in queue for retry.
