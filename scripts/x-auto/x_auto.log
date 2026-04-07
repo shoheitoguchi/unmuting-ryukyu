@@ -1147,3 +1147,9 @@ Unauthorized
 Unauthorized
 2026-04-07 21:35:50,824 - WARNING - Threads API credentials not set. Skipping Threads post.
 2026-04-07 21:35:50,824 - ERROR - X Post failed. Keeping in queue for retry.
+2026-04-07 22:26:00,733 - INFO - --- Running X Automation (One-shot Mode) ---
+2026-04-07 22:26:00,733 - INFO - Attempting to post to X: I used to subscribe to the narrative that history ...
+2026-04-07 22:26:00,829 - ERROR - Error posting tweet: 401 Unauthorized
+Unauthorized
+2026-04-07 22:26:00,830 - WARNING - Threads API credentials not set. Skipping Threads post.
+2026-04-07 22:26:00,830 - ERROR - X Post failed. Keeping in queue for retry.
